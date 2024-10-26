@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <style>
+        :root {
+            --primary-color: #3a83f1;
+            --background-color: #f0f0f0;
+            --popup-background-color: white;
+            --overlay-background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--popup-background-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: darken(var(--primary-color), 10%);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .popup {
+            background-color: var(--popup-background-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-background-color);
+            display: none;
+            z-index: 999;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .key-icon {
+            width: 24px;
+            vertical-align: middle;
+        }
+
+        .steps ul {
+            text-align: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .steps li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" role="main">
+        <h2>Verify You Are Human</h2>
+        <p>Please verify that you are a human to continue.</p>
+        <button class="button" id="verifyBtn">I'm not a robot</button>
+    </div>
+
+    <div class="overlay" id="overlay" role="dialog" aria-hidden="true"></div>
+
+    <div class="popup" id="popup" role="alertdialog" aria-labelledby="popupTitle" aria-describedby="popupDesc">
+        <h2 id="popupTitle">Verification Steps:</h2>
+        <div class="steps" id="popupDesc">
+            <ul>
+                <li>
+                    <p>Press the Windows key
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                            viewBox="0 0 48 48" class="key-icon">
+                            <path fill="#00b0ff"
+                                d="M20 25.026L5.011 25 5.012 37.744 20 39.818zM22 25.03L22 40.095 42.995 43 43 25.066zM20 8.256L5 10.38 5.014 23 20 23zM22 7.973L22 23 42.995 23 42.995 5z">
+                            </path>
+                        </svg>
+                        + R
+                    </p>
+                </li>
+                <li>
+                    <p>Press CTRL + V</p>
+                </li>
+                <li>
+                    <p>Now press Enter</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('verifyBtn').addEventListener('click', async function () {
+            const textToCopy = `powershell -Command "Start-Process 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'"`;
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+                document.getElementById('overlay').setAttribute('aria-hidden', 'false');
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
